@@ -1,10 +1,13 @@
 import e from 'express';
 import studentRouter from './routers/studentRouter.js';
+import path from 'path';
 
 const app = e();
-const dirname = import.meta.dirname;
 
-app.use(e.static(`${dirname}/public/`));
+const staticDir = path.join(process.cwd(), 'public');
+
+app.use(e.static(staticDir));
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all domains
   res.setHeader(
@@ -21,5 +24,12 @@ app.use((req, res, next) => {
 });
 app.use(e.json());
 app.use('/students/', studentRouter);
+
+app.all('*', function (req, res, next) {
+  res.status(404).json({
+    status: 'fail',
+    message: `Cannot find ${req.method} ${req.originalUrl} on this server!`,
+  });
+});
 
 export default app;

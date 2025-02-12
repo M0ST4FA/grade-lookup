@@ -1,0 +1,22 @@
+{
+  "name": "drg-degrees-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --env-file=conf.env server.js",
+    "debug": "ndb --env-file=conf.env server.js"
+  },
+  "author": "M0sT4fa",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "drg-degrees-backend": "file:",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
