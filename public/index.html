@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grades</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Grades Lookup</h1>
+
+      <div class="input-group">
+        <label for="studentNumber">Student Number:</label>
+        <input
+          type="text"
+          id="studentNumber"
+          placeholder="Enter Student Number"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="semester">Semester:</label>
+        <input
+          type="text"
+          id="semester"
+          placeholder="Enter Semester (e.g., 2024-2)"
+        />
+      </div>
+
+      <button onclick="fetchGrades()">Get Grades</button>
+
+      <div id="result">
+        <table id="gradesTable">
+          <thead>
+            <tr id="tableHeader"></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
